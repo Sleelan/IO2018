@@ -1,0 +1,14 @@
+Lista wymagań funkcjonalnych:
+	*System zawiera katalog dostępnych gier z możliością dodawania lub usuwania pozycji.
+	*System pozwala wypożyczyć grę na okres 3, 7 lub 14 dni.
+	*System pozwala zarezerwować kopię do dwóch dni przed jej właściwym wypożyczeniem.
+	*System jest w stanie śledzić liczność dostępnych kopii tej samej gry w zależności od wypożyczeń.
+	*System może przypisać klienta do konkretnego wypożyczonego egzemplarza gry.
+	*System pomaga pracownikowi wydać odpowiednią kopię przy odbiorze przez klienta.
+	*System pozwala klientowi na zdalne przedłużenie terminu wypożyczenia.
+	
+Lista wymagań niefunkcjonalnych:
+	*Klient może tylko przeglądać katalog, możliwość modyfikacji jest dostępna tylko dla pracowników wypożyczalni.
+	*Wypożyczanie i pre-rezerwacja wykonywane jest przez uprzednio zarejestrowanego w systemie klienta.
+	*Klient może rezerwować i opłacać wypożyczone gry przez internet, ale odbiór jest osobisty.
+	*Wypożyczane produkty to kopie fizyczne - system nie obsługuje wypożyczania cyfrowego.
