@@ -1,3 +1,2 @@
 Opis œwiata rzeczywistego
-Specyfikacja wymagañ
 Diagram wymagañ
