@@ -5,4 +5,4 @@ Zadaniem pracownika jest obsługa klienta odbierającego wypożyczoną grę, ora
 Pracownik ponosi odpowiedzialność za poprawność danych w systemie. Klient może w danym momencie mieć wypożyczone maksymalnie 3 różne gry.
 
 3 Dane techniczne
-Klient jest w stanie przeglądać katalog dostępnych gier za pomocą strony internetowej. Wypożyczalnia posiada jedną placówkę na terenie dużego miasta. Liczba potencjalnych klientów wypożyczalni jest szacowana na ok. 2000. W wypożyczalni dostępne będzie kilka tysięcy różnych gier, każda w kilku do kilkudziesięciu egzemplarzach w zależności od przewidywanego popytu.
+Klient jest w stanie przeglądać katalog dostępnych gier za pomocą strony internetowej. Wypożyczalnia posiada jedną placówkę na terenie dużego miasta. Liczba potencjalnych klientów wypożyczalni jest szacowana na ok. 2000. W wypożyczalni dostępne będzie kilka tysięcy różnych gier, każda w kilku do kilkudziesięciu egzemplarzach w zależności od przewidywanego popytu. Zaleca się stosowanie technologii Java.
