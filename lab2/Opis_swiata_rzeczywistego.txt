@@ -1,5 +1,5 @@
 1. Opis zasobów ludzkich
-Zadaniem pracownika jest obsługa klienta odbierającego wypożyczoną grę, oraz wprowadzenie do systemu zmian w ilości egzemlarzy gier dostępnych w magazynie (np. w przypadku odebrania od kuriera kopii nowo wydanej gry, lub w przypadku wykrycia uszkodzenia w jakimś egzemplarzu). Klient ma mozliwość wypożyczenia i przglądania dostępnych gier przez usługę online, oraz odbioru osobistego ww. gier w placówce wypożyczlni.
+Zadaniem pracownika jest obsługa klienta odbierającego wypożyczoną grę, oraz wprowadzenie do systemu zmian w ilości egzemlarzy gier dostępnych w magazynie (np. w przypadku odebrania od kuriera kopii nowo wydanej gry, lub w przypadku wykrycia uszkodzenia w jakimś egzemplarzu). Klient ma mozliwość wypożyczenia i przeglądania dostępnych gier przez usługę online, oraz odbioru osobistego ww. gier w placówce wypożyczlni.
 
 2. Przepisy i strategia firmy
 Pracownik ponosi odpowiedzialność za poprawność danych w systemie. Klient może w danym momencie mieć wypożyczone maksymalnie 3 różne gry.
