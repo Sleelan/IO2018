@@ -1,3 +1,17 @@
---Opis œwiata rzeczywistego
---Opis wymagañ
---Diagram wymagañ
+lab2:
+	--Opis œwiata rzeczywistego
+	--Opis wymagañ
+	--Diagram wymagañ
+
+lab3:
+	--Diagram przypadków u¿ycia
+	--Scenariusze przypadków u¿ycia
+	
+lab5:
+	--2 diagramy aktywnoœci wybranych funkcji systemu
+	
+lab7:
+	Diagram klas
+	Wyt³umaczenie wyboru klas w specyfikacji diagramu (PPM->Open specification)
+	projekt NetBeans
+	poprawa lab6
