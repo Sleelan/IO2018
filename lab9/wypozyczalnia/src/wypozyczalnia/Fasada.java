@@ -8,6 +8,11 @@ public class Fasada {
     private List<Klient> klienci = new ArrayList<Klient>();
     
     public Klient wyszukajKlienta(int id){
+        Klient klient = new Klient(id);
+        int index = klienci.indexOf(klient);
+        if (index != -1){
+            return klienci.get(index);
+        }
         return null;
     }
     
