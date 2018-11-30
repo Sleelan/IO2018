@@ -9,8 +9,21 @@ public class Klient {
         
     }
     
+    public EgzemplarzGry wyszukajEgzemplarz(int idEgzemplarza){
+        return null;
+    }
+    
     @Override
     public String toString(){
         return null;
+    }
+    
+    public Boolean equals(Klient klient){
+        if (this.id == klient.id){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }

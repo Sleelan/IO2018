@@ -7,7 +7,7 @@ public class Fasada {
     private List<Gra> gry = new ArrayList<Gra>();
     private List<Klient> klienci = new ArrayList<Klient>();
     
-    public Klient sprawdzKlienta(int id){
+    public Klient wyszukajKlienta(int id){
         return null;
     }
     
@@ -43,8 +43,19 @@ public class Fasada {
         
     }
     
-    public void przedluzWypozyczenie(int idKlienta, int idEgzemplarza, Date terminPrzedlozony){
-        
+    public void przedluzWypozyczenie(int idKlienta, int idEgzemplarza, Date terminPrzedluzony){
+        Klient klient = wyszukajKlienta(idKlienta);
+        if (klient != null) {
+            EgzemplarzGry egzemplarz = klient.wyszukajEgzemplarz(idEgzemplarza);
+            if (egzemplarz != null){
+                Boolean czyKoliduje = egzemplarz.czyTerminKolidujeZRezerwacjami(terminPrzedluzony);
+                if (czyKoliduje == false){
+                    Rezerwacja rezerwacja = egzemplarz.wyszukajRezerwacje(idKlienta);
+                    rezerwacja.przedluz(terminPrzedluzony);
+                }
+            }
+        }
+            
     }
     
     public void wypozyczZarezerwowanaGre(int idKlienta, int idEgzemplarza, Date terminOddania){

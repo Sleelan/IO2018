@@ -14,7 +14,10 @@ public class Rezerwacja {
     Rezerwacja(EgzemplarzGry newEgzemplarzGry, Klient newKlient, Date newTerminWygasniecia, boolean newWypozyczona){
         
     }
-    
+    public void przedluz(Date terminPrzedluzony){
+        
+    }
+            
     @Override
     public String toString(){
         return null;
