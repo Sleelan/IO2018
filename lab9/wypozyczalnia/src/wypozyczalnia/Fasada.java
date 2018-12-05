@@ -6,6 +6,7 @@ import java.util.Date;
 public class Fasada {
     private List<Gra> gry = new ArrayList<Gra>();
     private List<Klient> klienci = new ArrayList<Klient>();
+    private Fabryka fabryka = new Fabryka();
     
     public Klient wyszukajKlienta(int id){
         Klient klient = new Klient(id);
@@ -15,7 +16,9 @@ public class Fasada {
         }
         return null;
     }
-    
+    public Gra wyszukajGre(String[] daneGy){
+        return null;
+    }
     public Gra sprawdzDostepnoscGry(int id){
         return null;
     }
@@ -51,16 +54,24 @@ public class Fasada {
     public void przedluzWypozyczenie(int idKlienta, int idEgzemplarza, Date terminPrzedluzony){
         Klient klient = wyszukajKlienta(idKlienta);
         if (klient != null) {
-            EgzemplarzGry egzemplarz = klient.wyszukajEgzemplarz(idEgzemplarza);
-            if (egzemplarz != null){
-                Boolean czyKoliduje = egzemplarz.czyTerminKolidujeZRezerwacjami(terminPrzedluzony);
-                if (czyKoliduje == false){
-                    Rezerwacja rezerwacja = egzemplarz.wyszukajRezerwacje(idKlienta);
-                    rezerwacja.przedluz(terminPrzedluzony);
+            klient.przedluzWypozyczenie(idEgzemplarza, terminPrzedluzony);
+        }
+            
+    }
+    
+    public void zarezerwujGre(int idKlienta, String[] daneGry, Date terminEkspiracji){
+        Klient klient = wyszukajKlienta(idKlienta);
+        if (klient != null) {
+            Gra gra = wyszukajGre(daneGry);
+            if (gra != null){
+                EgzemplarzGry egzemplarz = gra.znajdzWolnyEgzemplarz(terminEkspiracji);
+                if (egzemplarz != null){
+                    Rezerwacja rezerwacja = fabryka.stworzRezerwacje(egzemplarz, klient, terminEkspiracji);
+                    klient.przypiszRezerwacje(rezerwacja);
+                    egzemplarz.przypiszRezerwacje(rezerwacja);
                 }
             }
         }
-            
     }
     
     public void wypozyczZarezerwowanaGre(int idKlienta, int idEgzemplarza, Date terminOddania){

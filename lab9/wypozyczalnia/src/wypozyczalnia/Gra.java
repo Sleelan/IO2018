@@ -1,4 +1,6 @@
 package wypozyczalnia;
+import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 public class Gra {
@@ -10,6 +12,17 @@ public class Gra {
     
     Gra(String newTytul, String newWydawnictwo, int newRokWydania, String newPlatforma){
         
+    }
+    
+    public EgzemplarzGry znajdzWolnyEgzemplarz (Date terminEkspiracji){
+        Iterator<EgzemplarzGry> it = egzemplarze.iterator();
+        while (it.hasNext()){
+            EgzemplarzGry egzemplarz = it.next();
+            if (egzemplarz.czyTerminKolidujeZRezerwacjami(terminEkspiracji) == false){
+                return egzemplarz;
+            }
+        }
+        return null;
     }
     
     @Override
