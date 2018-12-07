@@ -19,7 +19,7 @@ public class Rezerwacja {
     
     public void przedluz(Date terminPrzedluzony){
         if (wypozyczonyEgzemplarz.czyTerminKolidujeZRezerwacjami(terminPrzedluzony) == false){
-            dataWygasniecia.setTime(parse(terminPrzedluzony.toString()));
+            dataWygasniecia = terminPrzedluzony;
         }
     }
     
