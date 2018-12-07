@@ -1,6 +1,5 @@
 package wypozyczalnia;
 import java.util.Date;
-import static java.util.Date.parse;
 
 public class Rezerwacja {
     private EgzemplarzGry wypozyczonyEgzemplarz;

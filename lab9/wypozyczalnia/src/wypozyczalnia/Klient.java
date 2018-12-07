@@ -38,7 +38,7 @@ public class Klient {
         return null;
     }
     
-    public Boolean equals(Klient klient){
+    public boolean equals(Klient klient){
         if (this.id == klient.id){
             return true;
         }

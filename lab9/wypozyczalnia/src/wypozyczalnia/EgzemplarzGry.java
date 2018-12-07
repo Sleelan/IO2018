@@ -17,7 +17,7 @@ public class EgzemplarzGry {
         
     }
     
-    public Boolean czyTerminKolidujeZRezerwacjami(Date terminPrzedluzony){
+    public boolean czyTerminKolidujeZRezerwacjami(Date terminPrzedluzony){
         Iterator<Rezerwacja> it = rezerwacje.iterator();
         while (it.hasNext()){
             Rezerwacja rezerwacja = it.next();
