@@ -9,10 +9,17 @@ public class Rezerwacja {
     private boolean wypozyczona;
     
     Rezerwacja(EgzemplarzGry newEgzemplarzGry, Klient newKlient, Date newTerminWygasniecia){
-        
+        wypozyczonyEgzemplarz = newEgzemplarzGry;
+        wypozyczajacyKlient = newKlient;
+        dataWygasniecia = newTerminWygasniecia;
+        wypozyczona = false;
     }
     
     Rezerwacja(EgzemplarzGry newEgzemplarzGry, Klient newKlient, Date newTerminWygasniecia, boolean newWypozyczona){
+        wypozyczonyEgzemplarz = newEgzemplarzGry;
+        wypozyczajacyKlient = newKlient;
+        dataWygasniecia = newTerminWygasniecia;
+        wypozyczona = newWypozyczona;
         
     }
     
