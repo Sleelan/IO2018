@@ -11,6 +11,10 @@ public class Gra {
     private List<EgzemplarzGry> egzemplarze;
     
     Gra(String newTytul, String newWydawnictwo, int newRokWydania, String newPlatforma){
+        tytul = newTytul;
+        wydawnictwo = newWydawnictwo;
+        rokWydania = newRokWydania;
+        platforma = newPlatforma;
         
     }
     

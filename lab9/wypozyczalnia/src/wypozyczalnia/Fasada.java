@@ -27,24 +27,9 @@ public class Fasada {
         return null;
     }
     
-    public Gra szukajGry(String tytul){
-        return null;
-    }
-    
-    public Gra szukajGry(String tytul, String wydawnictwo){
-        return null;
-    }
-    
-    public Gra szukajGry(String tytul, String wydawnictwo, int rokWydania){
-        return null;
-    }
-    
-    public Gra szukajGry(String tytul, String wydawnictwo, int rokWydania, String platforma){
-        return null;
-    }
-    
-    public void dodajGre(String newTytul, String newWydawnictwo, int newRokWydania, String newPlatforma){
-        
+    public void dodajGre(String[] daneGry){
+        Gra gra = fabryka.stworzGre(daneGry);
+        gry.add(gra);
     }
     
     public void usunEgzemplarz(int idEgzemplarza){
