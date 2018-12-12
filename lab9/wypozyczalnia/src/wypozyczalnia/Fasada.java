@@ -16,9 +16,15 @@ public class Fasada {
         }
         return null;
     }
-    public Gra wyszukajGre(String[] daneGy){
+    public Gra wyszukajGre(String[] daneGry){
+        Gra gra = fabryka.stworzGre(daneGry);
+        int index = gry.indexOf(gra);
+        if(index != -1){
+            return gry.get(index);
+        }
         return null;
     }
+    
     public Gra sprawdzDostepnoscGry(int id){
         return null;
     }
@@ -29,7 +35,20 @@ public class Fasada {
     
     public void dodajGre(String[] daneGry){
         Gra gra = fabryka.stworzGre(daneGry);
-        gry.add(gra);
+        if(wyszukajGre(daneGry)==null)
+            gry.add(gra);
+    }
+    
+    public void dodajEgzemplarz(String[] daneGry, int idEgzemplarza){
+        Gra gra = wyszukajGre(daneGry);
+        if(gra != null)
+            gra.dodajEgzemplarz(idEgzemplarza);
+    }
+    
+    public void dodajKlienta(int id){
+        Klient klient = new Klient(id);
+        if(wyszukajKlienta(id)==null)
+            klienci.add(klient);
     }
     
     public void usunEgzemplarz(int idEgzemplarza){
@@ -63,7 +82,43 @@ public class Fasada {
         
     }
     
+    @Override
+    public String toString(){
+        String result = "Klienci:\n";
+        for(Klient k : klienci){
+            result += "\t" + k.toString() + "\n";
+        }
+        result += "Gry:\n";
+        for(Gra g : gry){
+            result += "\t" + g.toString() + "\n";
+        }
+        return result;
+    }
+    
     public static void main(String[] args){
+        Fasada fasada = new Fasada();
+        fasada.dodajKlienta(0);
+        fasada.dodajKlienta(1);
+        fasada.dodajKlienta(2);
+        fasada.dodajKlienta(1);
+        String[] daneGry1 = {"Red Dead Redemption 2", "Rockstar", "2018", "PS4"};
+        String[] daneGry2 = {"Dark Souls", "From Software", "2014", "PC"};
+        fasada.dodajGre(daneGry1);
+        fasada.dodajGre(daneGry2);
+        fasada.dodajGre(daneGry1);
+        
+        fasada.dodajEgzemplarz(daneGry1, 0);
+        fasada.dodajEgzemplarz(daneGry1, 1);
+        fasada.dodajEgzemplarz(daneGry1, 1);
+        fasada.dodajEgzemplarz(daneGry2, 2);
+        fasada.dodajEgzemplarz(daneGry2, 3);
+        fasada.dodajEgzemplarz(daneGry2, 4);
+        
+        Date data1 = new Date(); //aktualna data
+        Date data2 = new Date(data1.getTime()+216000000); // aktualna data + 60h
+        Date data3 = new Date(data1.getTime()+1440000); // data2 + 24h
+        fasada.zarezerwujGre(0, daneGry1, data1);
+        System.out.println(fasada.toString());
         
     }
 }

@@ -22,5 +22,6 @@ public class Fabryka {
             return nowaGra;
         }
         return null;
-    }
+    }    
+    
 }

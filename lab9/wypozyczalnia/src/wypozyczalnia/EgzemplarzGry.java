@@ -10,11 +10,8 @@ public class EgzemplarzGry {
     private List<Rezerwacja> rezerwacje = new ArrayList<Rezerwacja>();
     
     EgzemplarzGry(int newID, Gra newGra){
-        
-    }
-    
-    EgzemplarzGry(int newID, Gra newGra, Rezerwacja newRezerwacja){
-        
+        this.id = newID;
+        this.gra = newGra;
     }
     
     public boolean czyTerminKolidujeZRezerwacjami(Date terminPrzedluzony){
@@ -38,6 +35,16 @@ public class EgzemplarzGry {
     
     @Override
     public String toString(){
-        return null;
+        return "Gra: " + gra.getTytul() + ", ID: " + id;
+    }
+    
+    @Override
+    public boolean equals(Object o){
+        EgzemplarzGry e = (EgzemplarzGry)o;
+        if(this.gra != e.gra)
+            return false;
+        if(this.id != e.id)
+            return false;
+        return true;
     }
 }

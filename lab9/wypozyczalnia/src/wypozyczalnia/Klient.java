@@ -4,10 +4,10 @@ import java.util.Date;
 import java.util.List;
 public class Klient {
     private int id;
-    private List<Rezerwacja> rezerwacje;
+    private List<Rezerwacja> rezerwacje = new ArrayList<Rezerwacja>();
     
     Klient(int newID){
-        
+        this.id = newID;
     }
     
     public EgzemplarzGry wyszukajEgzemplarz(int idEgzemplarza){
@@ -35,10 +35,12 @@ public class Klient {
     
     @Override
     public String toString(){
-        return null;
+        return "ID: " + id;
     }
     
-    public boolean equals(Klient klient){
+    @Override
+    public boolean equals(Object o){
+        Klient klient = (Klient)o;
         if (this.id == klient.id){
             return true;
         }
@@ -46,4 +48,13 @@ public class Klient {
             return false;
         }
     }
+    /*
+    public boolean equals(Klient klient){
+        if (this.id == klient.id){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }*/
 }
