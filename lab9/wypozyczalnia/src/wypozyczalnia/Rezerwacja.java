@@ -12,6 +12,7 @@ public class Rezerwacja {
         wypozyczonyEgzemplarz = newEgzemplarzGry;
         wypozyczajacyKlient = newKlient;
         dataWygasniecia = newTerminWygasniecia;
+        terminStartu = new Date();
         wypozyczona = false;
     }
     
@@ -19,6 +20,7 @@ public class Rezerwacja {
         wypozyczonyEgzemplarz = newEgzemplarzGry;
         wypozyczajacyKlient = newKlient;
         dataWygasniecia = newTerminWygasniecia;
+        terminStartu = new Date();
         wypozyczona = newWypozyczona;
         
     }
@@ -38,6 +40,7 @@ public class Rezerwacja {
             
     @Override
     public String toString(){
-        return null;
+        String result = "Zarezerwowane przez klienta o " + wypozyczajacyKlient + ", od " + terminStartu + " do " + dataWygasniecia;
+        return result;
     }
 }

@@ -117,7 +117,14 @@ public class Fasada {
         Date data1 = new Date(); //aktualna data
         Date data2 = new Date(data1.getTime()+216000000); // aktualna data + 60h
         Date data3 = new Date(data1.getTime()+1440000); // data2 + 24h
-        fasada.zarezerwujGre(0, daneGry1, data1);
+        fasada.zarezerwujGre(0, daneGry1, data3);
+        fasada.zarezerwujGre(1, daneGry2, data2);
+        
+        System.out.println("Stan początkowy:\n");
+        System.out.println(fasada.toString());
+        System.out.println("Przedłużanie rezerwacji...\n");
+        
+        fasada.przedluzWypozyczenie(1, 0, data2);
         System.out.println(fasada.toString());
         
     }

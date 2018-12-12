@@ -35,7 +35,12 @@ public class EgzemplarzGry {
     
     @Override
     public String toString(){
-        return "Gra: " + gra.getTytul() + ", ID: " + id;
+        String result = "Gra: " + gra.getTytul() + ", ID: " + id;
+        result += "\tRezerwacje:";
+        for(Rezerwacja r : rezerwacje){
+            result += "\n\t" + r.toString();
+        }
+        return result;
     }
     
     @Override
