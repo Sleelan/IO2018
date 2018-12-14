@@ -55,12 +55,17 @@ public class Fasada {
         
     }
     
-    public void przedluzWypozyczenie(int idKlienta, int idEgzemplarza, Date terminPrzedluzony){
+    public void przedluzWypozyczenie(int idKlienta, int idEgzemplarza, String[] daneGry, Date terminPrzedluzony){
         Klient klient = wyszukajKlienta(idKlienta);
         if (klient != null) {
-            klient.przedluzWypozyczenie(idEgzemplarza, terminPrzedluzony);
+            Gra gra = wyszukajGre(daneGry);
+            if(gra != null){
+                EgzemplarzGry egzemplarz = gra.wyszukajEgzemplarz(idEgzemplarza);
+                if(egzemplarz != null){
+                    klient.przedluzWypozyczenie(egzemplarz, terminPrzedluzony);
+                }
+            }
         }
-            
     }
     
     public void zarezerwujGre(int idKlienta, String[] daneGry, Date terminEkspiracji){
@@ -116,7 +121,7 @@ public class Fasada {
         
         Date data1 = new Date(); //aktualna data
         Date data2 = new Date(data1.getTime()+216000000); // aktualna data + 60h
-        Date data3 = new Date(data1.getTime()+1440000); // data2 + 24h
+        Date data3 = new Date(data2.getTime()+86400000); // data2 + 24h
         fasada.zarezerwujGre(0, daneGry1, data3);
         fasada.zarezerwujGre(1, daneGry2, data2);
         
@@ -124,8 +129,11 @@ public class Fasada {
         System.out.println(fasada.toString());
         System.out.println("Przedłużanie rezerwacji...\n");
         
-        fasada.przedluzWypozyczenie(1, 0, data2);
+        fasada.przedluzWypozyczenie(1, 2, daneGry2, data3);
         System.out.println(fasada.toString());
+        //System.out.println(data1);
+        //System.out.println(data2);
+        //System.out.println(data3);
         
     }
 }

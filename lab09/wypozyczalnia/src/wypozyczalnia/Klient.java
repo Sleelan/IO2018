@@ -14,8 +14,8 @@ public class Klient {
         return null;
     }
     
-    public void przedluzWypozyczenie(int idEgzemplarza, Date terminPrzedluzony){
-        Rezerwacja rezerwacja = wyszukajRezerwacjeNaEgzemplarz(idEgzemplarza);
+    public void przedluzWypozyczenie(EgzemplarzGry egzemplarz, Date terminPrzedluzony){
+        Rezerwacja rezerwacja = wyszukajRezerwacjeNaEgzemplarz(egzemplarz);
         if (rezerwacja != null){
             rezerwacja.przedluz(terminPrzedluzony);
         }
@@ -25,10 +25,11 @@ public class Klient {
         rezerwacje.add(rezerwacja);
     }
     
-    public Rezerwacja wyszukajRezerwacjeNaEgzemplarz(int idEgzemplarza){
-        Rezerwacja rezerwacja = rezerwacje.get(idEgzemplarza);
-        if (rezerwacje.indexOf(rezerwacja) != -1 ){
-            return rezerwacja;
+    public Rezerwacja wyszukajRezerwacjeNaEgzemplarz(EgzemplarzGry egzemplarz){
+        for(Rezerwacja r : rezerwacje){
+            if(r.getEgzemplarz() == egzemplarz){
+                return r;
+            }
         }
         return null;
     }
@@ -48,13 +49,4 @@ public class Klient {
             return false;
         }
     }
-    /*
-    public boolean equals(Klient klient){
-        if (this.id == klient.id){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }*/
 }

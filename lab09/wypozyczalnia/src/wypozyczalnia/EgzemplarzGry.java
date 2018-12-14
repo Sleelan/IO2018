@@ -15,10 +15,8 @@ public class EgzemplarzGry {
     }
     
     public boolean czyTerminKolidujeZRezerwacjami(Date terminPrzedluzony){
-        Iterator<Rezerwacja> it = rezerwacje.iterator();
-        while (it.hasNext()){
-            Rezerwacja rezerwacja = it.next();
-            if (rezerwacja.czyKolidujeZTerminem(terminPrzedluzony) == true){
+        for(Rezerwacja r : rezerwacje){
+            if(r.czyKolidujeZTerminem(terminPrzedluzony)==true){
                 return true;
             }
         }

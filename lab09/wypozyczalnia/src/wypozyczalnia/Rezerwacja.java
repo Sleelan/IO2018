@@ -25,6 +25,10 @@ public class Rezerwacja {
         
     }
     
+    public EgzemplarzGry getEgzemplarz(){
+        return this.wypozyczonyEgzemplarz;
+    }
+    
     public void przedluz(Date terminPrzedluzony){
         if (wypozyczonyEgzemplarz.czyTerminKolidujeZRezerwacjami(terminPrzedluzony) == false){
             dataWygasniecia = terminPrzedluzony;
@@ -33,9 +37,9 @@ public class Rezerwacja {
     
     public boolean czyKolidujeZTerminem(Date termin){
         if (terminStartu.after(termin) == true){
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
             
     @Override
