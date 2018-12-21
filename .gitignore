@@ -1,5 +1,5 @@
 *.vpp.bak_*
 *.vpp.lck
 
-*/NetBeansProject/build/*
+*/build/*
 */nbproject/private/*
