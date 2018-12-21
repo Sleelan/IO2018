@@ -1,5 +1,5 @@
 *.vpp.bak_*
 *.vpp.lck
 
-*/build/*
-*/nbproject/private/*
+**/build/**
+**/nbproject/private/**
