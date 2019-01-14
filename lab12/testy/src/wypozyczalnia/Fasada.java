@@ -8,6 +8,10 @@ public class Fasada {
     private List<Klient> klienci = new ArrayList<Klient>();
     private Fabryka fabryka = new Fabryka();
     
+    public List<Gra> getGry(){
+        return gry;
+    }
+    
     public Klient wyszukajKlienta(int id){
         Klient klient = new Klient(id);
         int index = klienci.indexOf(klient);
