@@ -1,9 +1,9 @@
 package wypozyczalnia;
+
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class Gra {
     private String tytul;
@@ -21,6 +21,10 @@ public class Gra {
     
     public List<EgzemplarzGry> getEgzemplarze(){
         return egzemplarze;
+    }
+    
+    public void setEgzemplarze(List<EgzemplarzGry> l){
+        this.egzemplarze = l;
     }
     
     public EgzemplarzGry znajdzWolnyEgzemplarz (Date terminEkspiracji){

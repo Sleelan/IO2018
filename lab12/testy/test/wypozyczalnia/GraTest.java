@@ -7,7 +7,6 @@ package wypozyczalnia;
 
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Date;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;

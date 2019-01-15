@@ -1,4 +1,5 @@
 package wypozyczalnia;
+
 import java.util.Date;
 
 public class Fabryka {

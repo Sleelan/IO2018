@@ -1,7 +1,9 @@
 package wypozyczalnia;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
 public class Klient {
     private int id;
     private List<Rezerwacja> rezerwacje = new ArrayList<Rezerwacja>();

@@ -1,7 +1,7 @@
 package wypozyczalnia;
+
 import java.util.Date;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class EgzemplarzGry {
@@ -12,6 +12,10 @@ public class EgzemplarzGry {
     EgzemplarzGry(int newID, Gra newGra){
         this.id = newID;
         this.gra = newGra;
+    }
+    
+    public int getID(){
+        return id;
     }
     
     public boolean czyTerminKolidujeZRezerwacjami(Date terminPrzedluzony){

@@ -5,7 +5,6 @@
  */
 package wypozyczalnia;
 
-import java.util.Date;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.experimental.categories.Category;

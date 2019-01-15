@@ -1,4 +1,5 @@
 package wypozyczalnia;
+
 import java.util.Date;
 
 public class Rezerwacja {
@@ -23,6 +24,10 @@ public class Rezerwacja {
         terminStartu = new Date();
         wypozyczona = newWypozyczona;
         
+    }
+    
+    public Date getDataWygasniecia(){
+        return dataWygasniecia;
     }
     
     public EgzemplarzGry getEgzemplarz(){

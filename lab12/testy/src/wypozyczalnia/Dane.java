@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package wypozyczalnia;
+
 import java.util.Date;
 
 public class Dane {
