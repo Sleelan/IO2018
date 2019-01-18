@@ -1,0 +1,15 @@
+
+CREATE TABLE Producenci(
+	Id int NOT NULL IDENTITY(1,1),
+	Nazwa nvarchar(40) NOT NULL,
+	REGON nvarchar(14) NOT NULL UNIQUE,
+	PRIMARY KEY (id)
+);
+
+CREATE TABLE Towary(
+	Id int NOT NULL IDENTITY(1,1),
+	Nazwa nvarchar(40) NOT NULL,
+	Id_producenta int NOT NULL,
+	Ilosc_w_magazynie int,
+	PRIMARY KEY (id)
+);
