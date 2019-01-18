@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateTowaryTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateTowaryLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{towaryController.selected.id}" title="#{bundle.CreateTowaryTitle_id}" required="true" requiredMessage="#{bundle.CreateTowaryRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.CreateTowaryLabel_nazwa}" for="nazwa" />
+                    <h:inputText id="nazwa" value="#{towaryController.selected.nazwa}" title="#{bundle.CreateTowaryTitle_nazwa}" required="true" requiredMessage="#{bundle.CreateTowaryRequiredMessage_nazwa}"/>
+                    <h:outputLabel value="#{bundle.CreateTowaryLabel_iloscWMagazynie}" for="iloscWMagazynie" />
+                    <h:inputText id="iloscWMagazynie" value="#{towaryController.selected.iloscWMagazynie}" title="#{bundle.CreateTowaryTitle_iloscWMagazynie}" />
+                    <h:outputLabel value="#{bundle.CreateTowaryLabel_idProducenta}" for="idProducenta" />
+                    <h:selectOneMenu id="idProducenta" value="#{towaryController.selected.idProducenta}" title="#{bundle.CreateTowaryTitle_idProducenta}" required="true" requiredMessage="#{bundle.CreateTowaryRequiredMessage_idProducenta}">
+                        <f:selectItems value="#{producenciController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{towaryController.create}" value="#{bundle.CreateTowarySaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{towaryController.prepareList}" value="#{bundle.CreateTowaryShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateTowaryIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditProducenciTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditProducenciLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{producenciController.selected.id}" title="#{bundle.EditProducenciTitle_id}" required="true" requiredMessage="#{bundle.EditProducenciRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditProducenciLabel_nazwa}" for="nazwa" />
+                    <h:inputText id="nazwa" value="#{producenciController.selected.nazwa}" title="#{bundle.EditProducenciTitle_nazwa}" required="true" requiredMessage="#{bundle.EditProducenciRequiredMessage_nazwa}"/>
+                    <h:outputLabel value="#{bundle.EditProducenciLabel_regon}" for="regon" />
+                    <h:inputText id="regon" value="#{producenciController.selected.regon}" title="#{bundle.EditProducenciTitle_regon}" required="true" requiredMessage="#{bundle.EditProducenciRequiredMessage_regon}"/>
+                </h:panelGrid>
+                <h:commandLink action="#{producenciController.update}" value="#{bundle.EditProducenciSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditProducenciViewLink}"/>
+                <br />
+                <h:commandLink action="#{producenciController.prepareList}" value="#{bundle.EditProducenciShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditProducenciIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

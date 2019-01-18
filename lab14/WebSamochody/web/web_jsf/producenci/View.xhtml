@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewProducenciTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewProducenciLabel_id}"/>
+                    <h:outputText value="#{producenciController.selected.id}" title="#{bundle.ViewProducenciTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewProducenciLabel_nazwa}"/>
+                    <h:outputText value="#{producenciController.selected.nazwa}" title="#{bundle.ViewProducenciTitle_nazwa}"/>
+                    <h:outputText value="#{bundle.ViewProducenciLabel_regon}"/>
+                    <h:outputText value="#{producenciController.selected.regon}" title="#{bundle.ViewProducenciTitle_regon}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{producenciController.destroyAndView}" value="#{bundle.ViewProducenciDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewProducenciEditLink}"/>
+                <br />
+                <h:commandLink action="#{producenciController.prepareCreate}" value="#{bundle.ViewProducenciCreateLink}" />
+                <br />
+                <h:commandLink action="#{producenciController.prepareList}" value="#{bundle.ViewProducenciShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewProducenciIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
