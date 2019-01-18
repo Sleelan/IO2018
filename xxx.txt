@@ -1,0 +1,39 @@
+
+CREATE TABLE Producenci(
+	Id int NOT NULL IDENTITY(1,1),
+	Nazwa nvarchar(40) NOT NULL,
+	REGON nvarchar(14) NOT NULL UNIQUE,
+	PRIMARY KEY (id)
+);
+
+CREATE TABLE Towary(
+	Id int NOT NULL IDENTITY(1,1),
+	Nazwa nvarchar(40) NOT NULL,
+	Id_producenta int NOT NULL,
+	Ilosc_w_magazynie int,
+	PRIMARY KEY (id)
+);
+
+ALTER TABLE Towary
+	ADD CONSTRAINT Towary_producent_FK
+	FOREIGN KEY (Id_producenta) REFERENCES Producenci(Id);
+	
+
+	
+
+INSERT INTO Producenci VALUES('TRW', '123456789');
+INSERT INTO Producenci VALUES('Bilstein', '465248625');
+INSERT INTO Producenci VALUES('Brembo', '000000000');
+INSERT INTO Producenci VALUES('Bosch', '987654321');
+INSERT INTO Producenci VALUES('Castrol', '456232258');
+
+INSERT INTO Towary VALUES('Tarcza hamulcowa', 1, 10);
+INSERT INTO Towary VALUES('Klocki hamulcowe', 3, 20);
+INSERT INTO Towary VALUES('Wycieraczka', 4, 15);
+INSERT INTO Towary VALUES('Tarcza hamulcowa', 3, 2);
+INSERT INTO Towary VALUES('Olej silnikowy', 5, 50);
+INSERT INTO Towary VALUES('Płyn do spryskiwaczy', 5, 34);
+INSERT INTO Towary VALUES('Akumulator', 4, 1);
+INSERT INTO Towary VALUES('Amortyzator', 2, 4);
+INSERT INTO Towary VALUES('Osłona przegubu', 1, 1);
+INSERT INTO Towary VALUES('Żarówka światła STOP', 4, 16);
