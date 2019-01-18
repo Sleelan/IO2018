@@ -1,0 +1,14 @@
+Fri Jan 18 09:23:24 EET 2019 : Serwer sieciowy Apache Derby - 10.10.2.0 - (1582446) uruchomiony i gotowy do zaakceptowania po³¹czeñ na porcie 1527 w {3} 
+----------------------------------------------------------------
+Fri Jan 18 09:23:35 EET 2019:
+ Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446) systemu Derby: instancja a816c00e-0168-5fd7-cc03-000068ce49f5
+w katalogu bazy danych C:\_STUDENT_LAB\218420\IO2018\lab14\placki sun.misc.Launcher$AppClassLoader@1d44bcfa 
+
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_92-b14
+user.dir=C:\Program Files\glassfish-4.1.1\javadb
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=C:\_STUDENT_LAB\218420\IO2018\lab14
+Uruchomiono program ³aduj¹cy klasê bazy danych - derby.database.classpath=''
